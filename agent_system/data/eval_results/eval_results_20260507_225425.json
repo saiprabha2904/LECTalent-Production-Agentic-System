@@ -1,0 +1,225 @@
+{
+  "summary": {
+    "timestamp": "2026-05-07T22:54:25.530706",
+    "total_tests": 7,
+    "success_rate": 0.8571428571428571,
+    "tool_selection_accuracy": 1.0,
+    "response_quality": {
+      "good": 5,
+      "acceptable": 0,
+      "poor": 2
+    },
+    "total_cost": 0.0,
+    "avg_latency_ms": 6540.979624858925,
+    "by_difficulty": {
+      "easy": {
+        "total": 3,
+        "success_rate": 0.6666666666666666,
+        "tool_selection_accuracy": 1.0,
+        "avg_latency_ms": 6319.920652681806,
+        "avg_cost": 0.0
+      },
+      "medium": {
+        "total": 4,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 1.0,
+        "avg_latency_ms": 6706.773853991763,
+        "avg_cost": 0.0
+      }
+    },
+    "by_category": {
+      "search": {
+        "total": 1,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 1.0
+      },
+      "document": {
+        "total": 2,
+        "success_rate": 0.5,
+        "tool_selection_accuracy": 1.0
+      },
+      "multi_tool": {
+        "total": 1,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 1.0
+      },
+      "calculation": {
+        "total": 1,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 1.0
+      },
+      "knowledge": {
+        "total": 2,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 1.0
+      }
+    },
+    "failed_tests": [
+      {
+        "query": "What are the key features in the agent systems guide?",
+        "error": "'dict' object has no attribute 'lower'",
+        "tools_used": [
+          "document_qa"
+        ],
+        "expected_tools": [
+          "document_qa"
+        ]
+      }
+    ]
+  },
+  "detailed_results": [
+    {
+      "query": "What is 15% of 250?",
+      "category": "calculation",
+      "difficulty": "easy",
+      "expected_tools": [
+        "calculator"
+      ],
+      "tools_used": [
+        "calculator"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 3975.3110840101726,
+      "cost": 0.0,
+      "response_quality": "poor",
+      "response": "15% of 250 is 37.5."
+    },
+    {
+      "query": "What is machine learning?",
+      "category": "knowledge",
+      "difficulty": "easy",
+      "expected_tools": [
+        "knowledge_base"
+      ],
+      "tools_used": [
+        "knowledge_base",
+        "web_search"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 7382.244416046888,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "Machine learning is a branch of artificial intelligence that focuses on the development of algorithms and statistical models that enable computers to perform tasks without explicit instructions. It in..."
+    },
+    {
+      "query": "What are the key features in the agent systems guide?",
+      "category": "document",
+      "difficulty": "easy",
+      "expected_tools": [
+        "document_qa"
+      ],
+      "tools_used": [
+        "document_qa"
+      ],
+      "tool_selection_correct": true,
+      "success": false,
+      "error": "'dict' object has no attribute 'lower'",
+      "latency_ms": 7602.206457988359,
+      "cost": 0.0,
+      "response_quality": "poor",
+      "response": {
+        "key_features": {
+          "components": [
+            "Perception: Gathering information from the environment through sensors or APIs.",
+            "Decision Making: Using reasoning and planning to determine actions.",
+            "Action: Executing decisions through actuators or tool calls.",
+            "Learning: Improving performance over time through experience."
+          ],
+          "best_practices": [
+            "Clear tool schemas with well-defined inputs and outputs.",
+            "Robust error handling and fallback mechanisms.",
+            "State management to track conversation and context.",
+            "Observability for monitoring performance and costs.",
+            "Evaluation harnesses to test agent behavior."
+          ],
+          "common_challenges": [
+            "Tool selection: Choosing the right tool for each task.",
+            "Error recovery: Handling failures gracefully.",
+            "Context management: Maintaining relevant information.",
+            "Cost optimization: Balancing performance and expenses."
+          ]
+        }
+      }
+    },
+    {
+      "query": "Calculate the square root of 144 and tell me about Python",
+      "category": "multi_tool",
+      "difficulty": "medium",
+      "expected_tools": [
+        "calculator",
+        "knowledge_base"
+      ],
+      "tools_used": [
+        "calculator",
+        "knowledge_base",
+        "web_search"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 9934.197124966886,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "Python is a high-level, interpreted programming language known for its simplicity and readability. It was created by Guido van Rossum and first released in 1991. Python supports multiple programming p..."
+    },
+    {
+      "query": "What's the latest news about AI?",
+      "category": "search",
+      "difficulty": "medium",
+      "expected_tools": [
+        "web_search"
+      ],
+      "tools_used": [
+        "web_search",
+        "web_search"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 9008.395790995564,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "I couldn't find the latest news about artificial intelligence at this moment. For up-to-date information, consider visiting major news outlets or dedicated AI news websites."
+    },
+    {
+      "query": "How do I authenticate with the API according to the documentation?",
+      "category": "document",
+      "difficulty": "medium",
+      "expected_tools": [
+        "document_qa"
+      ],
+      "tools_used": [
+        "document_qa"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 4255.95408299705,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "To authenticate with the API, you should securely use API keys. Here are some best practices:\n- Use API keys securely: Ensure that they are not exposed in public repositories or client-side code.\n- Sa..."
+    },
+    {
+      "query": "Search for Python but only in the history category",
+      "category": "knowledge",
+      "difficulty": "medium",
+      "expected_tools": [
+        "knowledge_base"
+      ],
+      "tools_used": [
+        "knowledge_base"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 3628.5484170075506,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "I couldn't find any historical information about Python in the knowledge base. If you need details about its history, please let me know, and I can perform a broader search."
+    }
+  ]
+}

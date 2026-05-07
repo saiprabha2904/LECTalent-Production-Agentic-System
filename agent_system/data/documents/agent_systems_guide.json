@@ -1,0 +1,9 @@
+{
+  "title": "Guide to Building Agent Systems",
+  "content": "\n                Agent systems are autonomous software entities that can perceive their environment,\n                make decisions, and take actions to achieve specific goals. Key components include:\n                \n                1. Perception: Gathering information from the environment through sensors or APIs\n                2. Decision Making: Using reasoning and planning to determine actions\n                3. Action: Executing decisions through actuators or tool calls\n                4. Learning: Improving performance over time through experience\n                \n                Best practices for agent systems:\n                - Clear tool schemas with well-defined inputs and outputs\n                - Robust error handling and fallback mechanisms\n                - State management to track conversation and context\n                - Observability for monitoring performance and costs\n                - Evaluation harnesses to test agent behavior\n                \n                Common challenges:\n                - Tool selection: Choosing the right tool for each task\n                - Error recovery: Handling failures gracefully\n                - Context management: Maintaining relevant information\n                - Cost optimization: Balancing performance and expenses\n                ",
+  "metadata": {
+    "author": "AI Research Team",
+    "date": "2024-01-15",
+    "category": "technical_guide"
+  }
+}

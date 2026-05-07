@@ -1,0 +1,9 @@
+{
+  "title": "Agent System API Documentation",
+  "content": "\n                API Endpoints:\n                \n                POST /agent/query\n                - Execute an agent query\n                - Request body: {\"query\": \"string\", \"context\": {}}\n                - Response: {\"result\": \"string\", \"tools_used\": [], \"cost\": float}\n                \n                GET /agent/tools\n                - List available tools\n                - Response: [{\"name\": \"string\", \"description\": \"string\", \"schema\": {}}]\n                \n                POST /agent/tool/execute\n                - Execute a specific tool\n                - Request body: {\"tool_name\": \"string\", \"parameters\": {}}\n                - Response: {\"success\": bool, \"data\": any, \"error\": \"string\"}\n                \n                GET /agent/state\n                - Get current agent state\n                - Response: {\"conversation_history\": [], \"context\": {}}\n                \n                Authentication:\n                - Use Bearer token in Authorization header\n                - Token format: \"Bearer <your_api_key>\"\n                \n                Rate Limits:\n                - 100 requests per minute per API key\n                - 1000 requests per hour per API key\n                ",
+  "metadata": {
+    "version": "1.0.0",
+    "date": "2024-03-01",
+    "category": "api_docs"
+  }
+}

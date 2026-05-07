@@ -1,0 +1,534 @@
+{
+  "summary": {
+    "timestamp": "2026-05-08T00:23:38.651332",
+    "total_tests": 18,
+    "success_rate": 0.8888888888888888,
+    "tool_selection_accuracy": 0.7222222222222222,
+    "response_quality": {
+      "good": 9,
+      "acceptable": 5,
+      "poor": 4
+    },
+    "total_cost": 0.0,
+    "avg_latency_ms": 7259.432078659302,
+    "by_difficulty": {
+      "easy": {
+        "total": 3,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 1.0,
+        "avg_latency_ms": 6685.855430337445,
+        "avg_cost": 0.0
+      },
+      "medium": {
+        "total": 4,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 1.0,
+        "avg_latency_ms": 8272.009833468474,
+        "avg_cost": 0.0
+      },
+      "hard": {
+        "total": 3,
+        "success_rate": 0.3333333333333333,
+        "tool_selection_accuracy": 1.0,
+        "avg_latency_ms": 9333.011819651196,
+        "avg_cost": 0.0
+      },
+      "adversarial": {
+        "total": 8,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 0.375,
+        "avg_latency_ms": 6190.642041503452,
+        "avg_cost": 0.0
+      }
+    },
+    "by_category": {
+      "multi_tool": {
+        "total": 1,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 1.0
+      },
+      "knowledge": {
+        "total": 2,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 1.0
+      },
+      "calculation": {
+        "total": 2,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 1.0
+      },
+      "search": {
+        "total": 1,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 1.0
+      },
+      "document": {
+        "total": 2,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 1.0
+      },
+      "adversarial": {
+        "total": 8,
+        "success_rate": 1.0,
+        "tool_selection_accuracy": 0.375
+      },
+      "complex": {
+        "total": 2,
+        "success_rate": 0.0,
+        "tool_selection_accuracy": 1.0
+      }
+    },
+    "failed_tests": [
+      {
+        "query": "If I have $1000 and invest it at 5% annual interest, how much will I have after 3 years? Also, what does the knowledge base say about financial modeling?",
+        "error": "'dict' object has no attribute 'lower'",
+        "tools_used": [
+          "calculator",
+          "calculator",
+          "knowledge_base"
+        ],
+        "expected_tools": [
+          "calculator",
+          "knowledge_base"
+        ]
+      },
+      {
+        "query": "Compare what the documents say about LLM best practices with current web information",
+        "error": "'dict' object has no attribute 'lower'",
+        "tools_used": [
+          "document_qa",
+          "web_search"
+        ],
+        "expected_tools": [
+          "document_qa",
+          "web_search"
+        ]
+      },
+      {
+        "query": "Calculate the meaning of life",
+        "error": null,
+        "tools_used": [
+          "calculator"
+        ],
+        "expected_tools": []
+      },
+      {
+        "query": "Search for information about a topic that definitely doesn't exist: xyzabc123nonsense",
+        "error": null,
+        "tools_used": [
+          "web_search"
+        ],
+        "expected_tools": [
+          "knowledge_base",
+          "web_search"
+        ]
+      },
+      {
+        "query": "What is 10 divided by 0?",
+        "error": null,
+        "tools_used": [],
+        "expected_tools": [
+          "calculator"
+        ]
+      },
+      {
+        "query": "Use the calculator to search the web for documents about knowledge",
+        "error": null,
+        "tools_used": [
+          "web_search"
+        ],
+        "expected_tools": []
+      },
+      {
+        "query": "What does the document say about topics that aren't in any document?",
+        "error": null,
+        "tools_used": [],
+        "expected_tools": [
+          "document_qa"
+        ]
+      }
+    ]
+  },
+  "detailed_results": [
+    {
+      "query": "What is 15% of 250?",
+      "category": "calculation",
+      "difficulty": "easy",
+      "expected_tools": [
+        "calculator"
+      ],
+      "tools_used": [
+        "calculator"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 4613.331541011576,
+      "cost": 0.0,
+      "response_quality": "poor",
+      "response": "15% of 250 is 37.5."
+    },
+    {
+      "query": "What is machine learning?",
+      "category": "knowledge",
+      "difficulty": "easy",
+      "expected_tools": [
+        "knowledge_base"
+      ],
+      "tools_used": [
+        "knowledge_base",
+        "web_search"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 8905.115458997898,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "Machine learning is a subset of artificial intelligence (AI) that enables systems to learn from data, identify patterns, and make decisions with minimal human intervention. It involves algorithms that..."
+    },
+    {
+      "query": "What are the key features in the agent systems guide?",
+      "category": "document",
+      "difficulty": "easy",
+      "expected_tools": [
+        "document_qa"
+      ],
+      "tools_used": [
+        "document_qa"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 6539.119291002862,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "The key features of agent systems include:\n\n1. **Perception**: Gathering information from the environment through sensors or APIs.\n2. **Decision Making**: Using reasoning and planning to determine act..."
+    },
+    {
+      "query": "Calculate the square root of 144 and tell me about Python",
+      "category": "multi_tool",
+      "difficulty": "medium",
+      "expected_tools": [
+        "calculator",
+        "knowledge_base"
+      ],
+      "tools_used": [
+        "calculator",
+        "knowledge_base",
+        "web_search"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 10970.349041977897,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "Python is a high-level, interpreted programming language known for its readability and simplicity. It supports multiple programming paradigms, including procedural, object-oriented, and functional pro..."
+    },
+    {
+      "query": "What's the latest news about AI?",
+      "category": "search",
+      "difficulty": "medium",
+      "expected_tools": [
+        "web_search"
+      ],
+      "tools_used": [
+        "web_search"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 7783.362166956067,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "I couldn't find any recent news about artificial intelligence. You might want to check major news websites or technology news platforms for the latest updates."
+    },
+    {
+      "query": "How do I authenticate with the API according to the documentation?",
+      "category": "document",
+      "difficulty": "medium",
+      "expected_tools": [
+        "document_qa"
+      ],
+      "tools_used": [
+        "document_qa"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 6446.405041962862,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "To authenticate with the API, you should use API keys securely. Ensure that you sanitize user inputs and validate outputs before execution. For more detailed instructions, please refer to the specific..."
+    },
+    {
+      "query": "If I have $1000 and invest it at 5% annual interest, how much will I have after 3 years? Also, what does the knowledge base say about financial modeling?",
+      "category": "complex",
+      "difficulty": "hard",
+      "expected_tools": [
+        "calculator",
+        "knowledge_base"
+      ],
+      "tools_used": [
+        "calculator",
+        "calculator",
+        "knowledge_base"
+      ],
+      "tool_selection_correct": true,
+      "success": false,
+      "error": "'dict' object has no attribute 'lower'",
+      "latency_ms": 8506.94620894501,
+      "cost": 0.0,
+      "response_quality": "poor",
+      "response": {
+        "future_value": 1157.63,
+        "financial_modeling": "Financial modeling often involves using tools and techniques to represent a company's financial performance. It can include simulations and projections based on historical data and assumptions about future conditions. Potential applications include optimizing investment strategies and assessing risk."
+      }
+    },
+    {
+      "query": "Compare what the documents say about LLM best practices with current web information",
+      "category": "complex",
+      "difficulty": "hard",
+      "expected_tools": [
+        "document_qa",
+        "web_search"
+      ],
+      "tools_used": [
+        "document_qa",
+        "web_search"
+      ],
+      "tool_selection_correct": true,
+      "success": false,
+      "error": "'dict' object has no attribute 'lower'",
+      "latency_ms": 15623.343750019558,
+      "cost": 0.0,
+      "response_quality": "poor",
+      "response": {
+        "document_best_practices": [
+          {
+            "title": "LLM Integration Best Practices",
+            "best_practices": [
+              {
+                "category": "Prompt Engineering",
+                "recommendations": [
+                  "Be specific and clear in instructions",
+                  "Provide examples when possible",
+                  "Use structured output formats (JSON, XML)",
+                  "Include relevant context"
+                ]
+              },
+              {
+                "category": "Error Handling",
+                "recommendations": [
+                  "Implement retry logic with exponential backoff",
+                  "Validate LLM outputs before using them",
+                  "Have fallback strategies for failures",
+                  "Log errors for debugging"
+                ]
+              },
+              {
+                "category": "Cost Management",
+                "recommendations": [
+                  "Cache responses when appropriate",
+                  "Use smaller models for simple tasks",
+                  "Implement rate limiting",
+                  "Monitor token usage"
+                ]
+              },
+              {
+                "category": "Security",
+                "recommendations": [
+                  "Sanitize user inputs",
+                  "Validate outputs before execution",
+                  "Implement content filtering",
+                  "Use API keys securely"
+                ]
+              },
+              {
+                "category": "Testing",
+                "recommendations": [
+                  "Create comprehensive test suites",
+                  "Include edge cases and adversarial inputs",
+                  "Test with different prompt variations",
+                  "Monitor performance metrics"
+                ]
+              }
+            ]
+          }
+        ],
+        "note": "No recent web information was found on LLM best practices."
+      }
+    },
+    {
+      "query": "Calculate the meaning of life",
+      "category": "adversarial",
+      "difficulty": "adversarial",
+      "expected_tools": [],
+      "tools_used": [
+        "calculator"
+      ],
+      "tool_selection_correct": false,
+      "success": true,
+      "error": null,
+      "latency_ms": 8733.492250030395,
+      "cost": 0.0,
+      "response_quality": "acceptable",
+      "response": "The meaning of life, according to Douglas Adams, is humorously stated as 42."
+    },
+    {
+      "query": "Search for information about a topic that definitely doesn't exist: xyzabc123nonsense",
+      "category": "adversarial",
+      "difficulty": "adversarial",
+      "expected_tools": [
+        "knowledge_base",
+        "web_search"
+      ],
+      "tools_used": [
+        "web_search"
+      ],
+      "tool_selection_correct": false,
+      "success": true,
+      "error": null,
+      "latency_ms": 8104.057832970284,
+      "cost": 0.0,
+      "response_quality": "acceptable",
+      "response": "There is no information available on the topic 'xyzabc123nonsense', as it appears to be a nonsensical term."
+    },
+    {
+      "query": "What is 10 divided by 0?",
+      "category": "adversarial",
+      "difficulty": "adversarial",
+      "expected_tools": [
+        "calculator"
+      ],
+      "tools_used": [],
+      "tool_selection_correct": false,
+      "success": true,
+      "error": null,
+      "latency_ms": 4707.787082996219,
+      "cost": 0.0,
+      "response_quality": "acceptable",
+      "response": "Dividing any number by zero is undefined in mathematics because there is no number that can be multiplied by zero to produce a non-zero number. Thus, 10 divided by 0 does not have a valid answer."
+    },
+    {
+      "query": "",
+      "category": "adversarial",
+      "difficulty": "adversarial",
+      "expected_tools": [],
+      "tools_used": [],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 1877.8445409843698,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "Please provide a question or a topic you'd like assistance with."
+    },
+    {
+      "query": "Use the calculator to search the web for documents about knowledge",
+      "category": "adversarial",
+      "difficulty": "adversarial",
+      "expected_tools": [],
+      "tools_used": [
+        "web_search"
+      ],
+      "tool_selection_correct": false,
+      "success": true,
+      "error": null,
+      "latency_ms": 12019.384709012229,
+      "cost": 0.0,
+      "response_quality": "acceptable",
+      "response": "I could not find any documents specifically about knowledge. If you have a more specific topic or a different term in mind, please let me know, and I can search again."
+    },
+    {
+      "query": "What is 2+2? What is 3+3? What is 4+4? What is 5+5? What is 6+6?",
+      "category": "adversarial",
+      "difficulty": "adversarial",
+      "expected_tools": [
+        "calculator"
+      ],
+      "tools_used": [
+        "calculator",
+        "calculator",
+        "calculator",
+        "calculator",
+        "calculator"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 10272.26870803861,
+      "cost": 0.0,
+      "response_quality": "poor",
+      "response": "I apologize, but I've reached the maximum number of steps. Please try rephrasing your question."
+    },
+    {
+      "query": "Tell me everything about everything",
+      "category": "adversarial",
+      "difficulty": "adversarial",
+      "expected_tools": [],
+      "tools_used": [],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 1737.8117499756627,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "Could you please specify a particular topic or area of interest you would like to know more about?"
+    },
+    {
+      "query": "Calculate sin(pi/2) + cos(0) * sqrt(16)",
+      "category": "calculation",
+      "difficulty": "hard",
+      "expected_tools": [
+        "calculator"
+      ],
+      "tools_used": [
+        "calculator"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 3868.745499989018,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "The result of sin(pi/2) + cos(0) * sqrt(16) is 5.0."
+    },
+    {
+      "query": "What does the document say about topics that aren't in any document?",
+      "category": "adversarial",
+      "difficulty": "adversarial",
+      "expected_tools": [
+        "document_qa"
+      ],
+      "tools_used": [],
+      "tool_selection_correct": false,
+      "success": true,
+      "error": null,
+      "latency_ms": 2072.489458019845,
+      "cost": 0.0,
+      "response_quality": "acceptable",
+      "response": "If a topic isn't found in any document, there won't be relevant information available from the document sources. In such cases, I would typically either look for information in my knowledge base or pe..."
+    },
+    {
+      "query": "Search for Python but only in the history category",
+      "category": "knowledge",
+      "difficulty": "medium",
+      "expected_tools": [
+        "knowledge_base"
+      ],
+      "tools_used": [
+        "knowledge_base",
+        "web_search"
+      ],
+      "tool_selection_correct": true,
+      "success": true,
+      "error": null,
+      "latency_ms": 7887.923082977068,
+      "cost": 0.0,
+      "response_quality": "good",
+      "response": "Python is a high-level programming language created by Guido van Rossum and first released in 1991. It was developed as a successor to the ABC programming language and was designed to emphasize code r..."
+    }
+  ]
+}
